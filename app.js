@@ -2,7 +2,7 @@
 
 var http = require('http'),
     url = require('url'),
-    requestRoutes = require('./lib/requestRouter.js'),
+    getRouter = require('./lib/getRouter.js'),
     routes = [],
     App = function(){};
 
@@ -13,7 +13,7 @@ var server = http.createServer(function(req, res) {
       fileName = fullPath.substr(fileStart, fullPath.length) + '.json';
 
   if(routes.indexOf(path) !== -1) {
-    requestRoutes[req.method](req, res, fileName);
+    getRouter[req.method](req, res, fileName);
   } else {
     res.writeHead(404, {
       'Content-Type': 'text/html'

@@ -16,7 +16,7 @@ module.exports = function(grunt) {
             after: true
           }
         },
-        src: ['Gruntfile.js', './test/test.js', 'server.js']
+        src: ['Gruntfile.js', './test/test.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js']
       }
     },
     jscs: {
@@ -25,7 +25,7 @@ module.exports = function(grunt) {
           "preset": "google"
         },
         files: {
-          src: ['Gruntfile.js', './test/test.js', 'server.js'] 
+          src: ['Gruntfile.js', './test/test.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js'] 
         }
       }
     },
@@ -36,7 +36,7 @@ module.exports = function(grunt) {
     },
     watch: {
         scripts: {
-        files: ['Gruntfile.js', './test/test.js', 'server.js'],
+        files: ['Gruntfile.js', './test/test.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js'],
         tasks: ['jshint', 'jscs', 'simplemocha'],
         options: {
           spawn: false,
