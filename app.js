@@ -9,12 +9,10 @@ var http = require('http'),
 var server = http.createServer(function(req, res) {
   var fullPath = url.parse(req.url).pathname,
       fileStart = Number(fullPath.lastIndexOf('/')) +1,
-      firstSlash = fullPath.indexOf('/'),
-      lastSlash = fullPath.lastIndexOf('/'),
-      path = fullPath.substr(firstSlash, lastSlash),
+      path = req.url.split('/')[1],
       fileName = fullPath.substr(fileStart, fullPath.length) + '.json';
 
-  if(routes.indexOf(path)) {
+  if(routes.indexOf(path) !== -1) {
     requestRoutes[req.method](req, res, fileName);
   } else {
     res.writeHead(404, {
@@ -32,7 +30,5 @@ App.prototype.work = function(address, callback) {
 App.prototype.add = function(route) {
   routes.push(route);
 };
-
-routes.push('testing');
 
 module.exports = new App();
