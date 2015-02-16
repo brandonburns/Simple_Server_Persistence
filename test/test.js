@@ -12,10 +12,10 @@ describe('Find data', function() {
   var server = 'localhost:3000';
   it('Should tell user where to find data', function(done) {
     chai.request(server)
-      .get('/')
+      .post('/postPath')
       .end(function (err, res) {
         expect(err).to.eql(null);
-        expect(res.text).to.eql('Check jsonData/storage.json');
+        expect(res.text).to.eql('Check jsonData/storage.json{"msg":"data stored"}');
         done();
       });
   });
