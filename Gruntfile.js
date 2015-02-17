@@ -16,7 +16,8 @@ module.exports = function(grunt) {
             after: true
           }
         },
-        src: ['Gruntfile.js', './test/test.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js']
+        src: ['Gruntfile.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js',
+        '/test/testDelete.js', './test/testPatch.js', './test/testPut.js', './test/testPost.js', './test/testGet.js']
       }
     },
     jscs: {
@@ -25,7 +26,8 @@ module.exports = function(grunt) {
           "preset": "google"
         },
         files: {
-          src: ['Gruntfile.js', './test/test.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js'] 
+          src: ['Gruntfile.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js',
+        '/test/testDelete.js', './test/testPatch.js', './test/testPut.js', './test/testPost.js', './test/testGet.js'] 
         }
       }
     },
@@ -36,7 +38,8 @@ module.exports = function(grunt) {
     },
     watch: {
         scripts: {
-        files: ['Gruntfile.js', './test/test.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js'],
+        files: ['Gruntfile.js', './lib/delete.js', './lib/get.js', './lib/patch.js', './lib/post.js', './lib/put.js', './lib/getRouter.js',
+        '/test/testDelete.js', './test/testPatch.js', './test/testPut.js', './test/testPost.js', './test/testGet.js'],
         tasks: ['jshint', 'jscs', 'simplemocha'],
         options: {
           spawn: false,
